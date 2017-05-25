@@ -30,18 +30,18 @@ const ImageDiff = require('./tools/imageDiff');
     // 设屏幕尺寸
     await page.property('viewportSize', {width: 375, height: 667});
 
-    const status = await page.open('https://www.baidu.com/');
+    const status = await page.open('http://api.l.whereask.com/daily/shop/page/welcome.html?t=1495702333802&uid=8bd7ef637e0d46438768defa024930ed&v=1&tone=2&client=1&token=DE60602A2348F7CD04D416DC42832BF82076477AB6790E3CB83CC6BAF62EDAC4&nickname=%25E8%259B%2587%25E8%258E%2593&qr_code=10&l=1&entity_id=99001331&shop_name=%25E8%2596%25AF%25E6%259D%25A1%25E5%2586%2585%25E7%25BD%2591%25E6%25B5%258B%25E8%25AF%2595%25E5%25BA%2597');
     console.log(status);
 
-    const designImage = './assets/baidu.png';
-    const actualImage = './assets/act-baidu.png';
-    const out = './assets/out-baidu.png';
+    const designImage = './assets/welcome.png';
+    const actualImage = './assets/act-welocme.png';
+    const out = './assets/out-welocme.png';
     await page.render(actualImage);
     console.log('Image diff file created');
 
-    if (!!actualImage.length) {
+    // if (!!require(designImage)) {
     	await ImageDiff(designImage, actualImage, out);
-    }    
+    // }
 
     // const content = await page.property('content');
     // console.log(content);
