@@ -25,7 +25,9 @@ const ImageDiff = require('./tools/imageDiff');
     // await page.on("onResourceRequested", function(requestData) {
     //     console.info('Requesting', requestData.url);
     // });
+    // 模拟浏览器
     await page.setting('userAgent', 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1');
+    // 设屏幕尺寸
     await page.property('viewportSize', {width: 375, height: 667});
 
     const status = await page.open('https://www.baidu.com/');
